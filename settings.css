@@ -1,6 +1,14 @@
 body {
   background-image: url("/Images/BG.png");
   background-repeat: no-repeat;
-  background-size: 1366px 900px;
-background-position: center
+  background-size: 1390px 790px;
+background-position: top
+}
+
+#back {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 10;
 }
