@@ -32,8 +32,9 @@ background-position: center
 
 #text {
   position: absolute;
-  top: -130px;
-  right: 380px;
+  top: -200px;
+  left: 48%;
+  transform: translateX(-50%);
 }
 h1 {
   color: white;
