@@ -30,3 +30,24 @@ body {
   transform: scale(1.1);
 }
 
+#set {
+  position: fixed;
+  top: 200px;
+  right: 450px;
+  z-index: 10;
+}
+
+#set:hover {
+  transform: scale(1.1);
+}
+
+#credits {
+  position: fixed;
+  top: 400px;
+  right: 450px;
+  z-index: 10;
+}
+
+#credits:hover {
+  transform: scale(1.1);
+}
