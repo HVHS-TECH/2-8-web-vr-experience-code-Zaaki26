@@ -1,7 +1,7 @@
 body {
   background-image: url("/Images/BG.png");
   background-repeat: no-repeat;
-  background-size: 1390px 790px;
+  background-size: 1920px 1100px;
 background-position: top
 }
 
@@ -12,3 +12,18 @@ background-position: top
     cursor: pointer;
     z-index: 10;
 }
+
+#arrow {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  cursor: pointer;
+  z-index: 10;
+  width: 85px;
+  height: 80px;
+  cursor: pointer;
+}
+#arrow:hover{
+  transform: scale(1.1);
+}
+
