@@ -1,8 +1,8 @@
 body {
   background-image: url("/Images/Title.png");
   background-repeat: no-repeat;
-  background-size: 1370px 800px;
-  
+  background-size: 1370px 850px;
+background-position: left
   
 }
 
@@ -19,8 +19,8 @@ body {
 
 #play {
   position: absolute;
-  bottom: -20px;
-  right: 100px;
+  bottom: -120px;
+  right: 60px;
   cursor: pointer;
   z-index: 10;
 }
