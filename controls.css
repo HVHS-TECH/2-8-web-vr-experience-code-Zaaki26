@@ -1,9 +1,39 @@
 body {
-  background-image: url("/Images/BG.png");
+  background-image: url("/Images/Keys.png");
   background-repeat: no-repeat;
-  background-size: 1400px 780px;         
+  background-size: 1370px 800px;        
   background-position: center;    
   background-attachment: fixed;
   min-height: 100vh;              
   margin: 0;                
+}
+
+#arrow {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  cursor: pointer;
+  z-index: 10;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+}
+#arrow:hover{
+  transform: scale(1.1);
+}
+
+#nextpage {
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 10;
+  width: 70px;
+  height: 45px;
+  cursor: pointer;
+  transform: scaleX(-1);
+}
+
+#nextpage:hover {
+  transform: scale(1.1) scaleX(-1);
 }

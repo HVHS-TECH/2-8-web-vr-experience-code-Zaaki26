@@ -1,0 +1,9 @@
+body {
+  background-image: url("/Images/Mouse.png");
+  background-repeat: no-repeat;
+  background-size: 1370px 800px;        
+  background-position: center;    
+  background-attachment: fixed;
+  min-height: 100vh;              
+  margin: 0;                
+}
