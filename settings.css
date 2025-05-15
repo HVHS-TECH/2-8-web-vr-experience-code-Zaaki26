@@ -1,11 +1,14 @@
 body {
   background-image: url("/Images/BG.png");
   background-repeat: no-repeat;
-  background-size: 1400px 780px;         
+  background-size: cover;           
   background-position: center;    
   background-attachment: fixed;
   min-height: 100vh;              
-  margin: 0;                
+  min-width: 100vw;         
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;                  
 }
 
 #back {
@@ -22,8 +25,8 @@ body {
   left: 15px;
   cursor: pointer;
   z-index: 10;
-  width: 35px;
-  height: 30px;
+  width: 80px;
+  height: 80px;
   cursor: pointer;
 }
 #arrow:hover{
@@ -32,8 +35,8 @@ body {
 
 #set {
   position: fixed;
-  top: 200px;
-  right: 450px;
+  top: 300px;
+  right: 650px;
   z-index: 10;
 }
 
@@ -43,8 +46,8 @@ body {
 
 #credits {
   position: fixed;
-  top: 400px;
-  right: 450px;
+  top: 500px;
+  right: 650px;
   z-index: 10;
 }
 

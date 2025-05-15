@@ -1,11 +1,14 @@
 body {
   background-image: url("/Images/Keys.png");
   background-repeat: no-repeat;
-  background-size: 1370px 800px;        
+  background-size: 2100px 1250px;           
   background-position: center;    
   background-attachment: fixed;
   min-height: 100vh;              
-  margin: 0;                
+  min-width: 100vw;         
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;                  
 }
 
 #arrow {
@@ -14,8 +17,8 @@ body {
   left: 15px;
   cursor: pointer;
   z-index: 10;
-  width: 35px;
-  height: 30px;
+  width: 90px;
+  height: 80px;
   cursor: pointer;
 }
 #arrow:hover{
@@ -28,8 +31,8 @@ body {
   right: 30px;
   cursor: pointer;
   z-index: 10;
-  width: 70px;
-  height: 45px;
+  width: 110px;
+  height: 80px;
   cursor: pointer;
   transform: scaleX(-1);
 }

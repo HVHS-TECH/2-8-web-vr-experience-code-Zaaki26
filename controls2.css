@@ -1,9 +1,27 @@
 body {
   background-image: url("/Images/Mouse.png");
   background-repeat: no-repeat;
-  background-size: 1370px 800px;        
+  background-size: 2100px 1250px;           
   background-position: center;    
   background-attachment: fixed;
   min-height: 100vh;              
-  margin: 0;                
+  min-width: 100vw;         
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;                     
 }
+
+#arrow {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  cursor: pointer;
+  z-index: 10;
+  width: 90px;
+  height: 80px;
+  cursor: pointer;
+}
+#arrow:hover{
+  transform: scale(1.1);
+}
+
