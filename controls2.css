@@ -1,5 +1,5 @@
 body {
-  background-image: url("/Images/Mouse.png");
+  background-image: url("/Images/BG.png");
   background-repeat: no-repeat;
   background-size: 2100px 1250px;           
   background-position: center;    
@@ -25,3 +25,25 @@ body {
   transform: scale(1.1);
 }
 
+#icon {
+  position: fixed;
+  top: 25px;
+  right: 75px;
+  z-index: 10;
+}
+
+#control {
+  position: fixed;
+  top: 10px;
+  right: 300px;
+  z-index: 10;
+  width: 850px;
+  height: 250px;
+}
+
+#mouse {
+  position: fixed;
+  top: 0px;
+  right: 285px;
+  z-index: 10;
+}
