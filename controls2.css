@@ -43,7 +43,21 @@ body {
 
 #mouse {
   position: fixed;
-  top: 0px;
-  right: 285px;
+  top: -100px;
+  right: 275px;
   z-index: 10;
+}
+
+body {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+body.fade-in {
+  opacity: 0;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }

@@ -1,0 +1,54 @@
+#cogwheel {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#cogwheel:hover {
+  transform: scale(1.1);
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  text-align: center;
+}
+.modal button {
+  margin: 1em;
+  padding: 1em 2em;
+  font-size: 1.2em;
+}
+
+#pauseModal .modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em; 
+  background: #000000;
+  padding: 2em;
+  border-radius: 10px;
+}
+
+#pauseModal .modal-content img {
+  margin: 1em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+#pauseModal .modal-content img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #fa0000;
+}

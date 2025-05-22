@@ -3,15 +3,36 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width"/>
-    <link href="Experience.css" rel="stylesheet" type="text/css"/>
+   <link href="../Experience.css" rel="stylesheet">
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
  
     </head>
  
   <body>
+<img src="../Images/Cogwheel.png" id="cogwheel" width="100" style="cursor:pointer;" onclick="showPauseModal()">
+
     <a-scene>
 
+      <a-plane positon="0 0 0" rotation="-90 0 0" width="100" height="100" color="green"></a-plane>
     </a-scene>
+    <div id="pauseModal" class="modal" style="display:none;">
+  <div class="modal-content">
+  <img src="../Images/Resume.png" id="resumeBtn" width="100" style="cursor: pointer: none;">
+   <img src="../Images/SET.png" id="setBtn" width="100" style="cursor: pointer: none;">
+  </div>
+</div>
+<script>
+function showPauseModal() {
+  document.getElementById('pauseModal').style.display = 'flex';
+}
+document.getElementById('resumeBtn').onclick = function() {
+  document.getElementById('pauseModal').style.display = 'none';
+};
+document.getElementById('settingsBtn').onclick = function() {
+
+  alert('Settings clicked! (Add your settings logic here)');
+};
+</script>
   </body>
   </html>

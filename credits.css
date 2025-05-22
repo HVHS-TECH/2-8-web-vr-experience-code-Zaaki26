@@ -21,3 +21,17 @@ body {
 #arrow:hover{
   transform: scale(1.1);
 }
+
+#credit {
+  position: fixed;
+  top: 30px;
+  right: 320px;
+  z-index: 10;
+}
+
+#icon {
+  position: fixed;
+  top: 25px;
+  right: 75px;
+  z-index: 10;
+}

@@ -6,7 +6,7 @@
 
 
     </head>
-    <body>
+    <body class="fade-in">
        <a href="../Controls/Controlpage.html">
      
          <img src="../Images/Back.png" id="arrow">
@@ -15,5 +15,15 @@
       <img src="../Images/Icon.png" id="icon" width="200">
 
       <img src="../Images/Control.png" id="control" width="1000">
-      <img src="../Images/Mouse.png" id="mouse" width="950">
+      <img src="../Images/Mouse.png" id="mouse" width="1050">
+      <script>
+  window.addEventListener('load', () => {
+    document.body.classList.add('fade-in');
+  });
+</script>
+<script>
+window.onload = function() {
+  document.body.classList.remove('fade-in');
+};
+</script>
     </body>

@@ -1,15 +1,19 @@
 body {
   background-image: url("/Images/Title.png");
   background-repeat: no-repeat;
-  background-size: 1366px 900px;
-background-position: center
-  
+  background-size: cover;         
+  background-position: center;
+  margin: 0;
+  min-height: 100vh;
 }
 
 #cogwheel {
-  position: absolute;
-  top: 10px;
-  right: 20px;
+  position: fixed;
+  top: 3vw;                       
+  right: 3vw;                     
+  width: 7vw;
+  min-width: 40px;
+  max-width: 90px;
   cursor: pointer;
   z-index: 10;
 }
@@ -17,13 +21,16 @@ background-position: center
   transform: scale(1.1);
 }
 
+
 #play {
-  position: absolute;
-  bottom: 30px;
-  right: 60px;
+  position: fixed;
+  bottom: 3vw;                    
+  right: 8vw;                   
+  width: 25vw;
+  min-width: 120px;
+  max-width: 300px;
   cursor: pointer;
   z-index: 10;
-  
 }
 #play:hover {
   box-shadow: 0 50px 18px 0 rgba(145, 7, 7, 0.424), 0 -20px 50px 0 rgb(191, 21, 21);
@@ -32,29 +39,40 @@ background-position: center
 
 #text {
   position: absolute;
-  top: -200px;
-  left: 48%;
+  top: -18vw;
+  left: 50%;
   transform: translateX(-50%);
-}
-h1 {
-  color: white;
-  text-align: center;
-}
-
-p {
-  font-family: verdana;
-  font-size: 20px;
+  width: 100vw;        
+  min-width: 500px;  
+  max-width: 1600px; 
 }
 
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url(Images/Title.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
+@media (max-width: 600px) {
+  #cogwheel, #play, #text {
+    width: 80vw;
+    min-width: 60px;
+    max-width: 95vw;
+  }
+  #play {
+    bottom: 8vw;
+    right: 5vw;
+  }
+  #text {
+    top: 2vw;
+  }
 }
+
+body {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+body.fade-in {
+  opacity: 0;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
