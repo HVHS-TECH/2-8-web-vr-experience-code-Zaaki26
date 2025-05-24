@@ -1,54 +1,31 @@
 body {
   background-image: url("/Images/BG.png");
   background-repeat: no-repeat;
-  background-size: 1400px 780px;         
-  background-position: center;    
+  background-size: cover; /* This will make it fill the screen */
+  background-position: center;
   background-attachment: fixed;
-  min-height: 100vh;              
-  margin: 0;                
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  box-sizing: border-box;
+  opacity: 0; /* for fade-in */
+  transition: opacity 0.8s ease;
 }
 
-#back {
-    position: fixed;
-    top: 10px;
-    left: 20px;
-    cursor: pointer;
-    z-index: 10;
+body.fade-in {
+  opacity: 1; /* Fade in on load */
 }
 
 #arrow {
-  position: absolute;
-  top: 5px;
-  left: 15px;
-  cursor: pointer;
-  z-index: 10;
- width: 90px;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  width: 90px;
   height: 80px;
   cursor: pointer;
-}
-#arrow:hover{
-  transform: scale(1.1);
-}
-
-#set {
-  position: fixed;
-  top: 200px;
-  right: 400px;
   z-index: 10;
 }
-
-#set:hover {
-  transform: scale(1.1);
-}
-
-#credits {
-  position: fixed;
-  top: 400px;
-  right: 400px;
-  z-index: 10;
-}
-
-#credits:hover {
+#arrow:hover {
   transform: scale(1.1);
 }
 
@@ -59,11 +36,38 @@ body {
   z-index: 10;
 }
 
-body {
-  opacity: 0;
-  transition: opacity 0.8s ease;
+/* Container for centered buttons */
+#menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  z-index: 5;
 }
 
-body.fade-in {
-  opacity: 1;
+/* Button styles */
+#set,
+#credits {
+  width: 600px;
+  max-width: 80vw;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
+
+#set:hover,
+#credits:hover {
+  transform: scale(1.1);
+}
+
+/* Optional: for smaller screens */
+@media (max-width: 768px) {
+  #set,
+  #credits {
+    width: 90vw;
+  }
+}
+

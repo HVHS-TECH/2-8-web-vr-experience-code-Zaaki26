@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-
- <link href="/settings.css" rel="stylesheet">
-   <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-    </head>
-  <body>
- <a href="../index.html">
-    <img src="../Images/Back.png" id="arrow">
+<head>
+  <link href="/settings.css" rel="stylesheet">
+  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+<body>
+  <a href="../index.html">
+    <img src="../Images/Back.png" id="arrow" alt="Back">
   </a>
 
-  <a href="../Controls/Controlpage.html">
-<img src="../Images/Settings.png" id="set" width="600" style="cursor: pointer;">
-  </a>
+  <img src="../Images/Icon.png" id="icon" width="200" alt="Icon">
 
-  <a href="../Credits/Creditpage.html">
-<img src="../Images/Credits.png" id="credits" width="600" style="cursor: pointer;">
-</a>
+  <!-- Keep the layout aligned and centered -->
+  <div id="menu">
+    <a href="../Controls/Controlpage.html">
+      <img src="../Images/Settings.png" id="set" alt="Settings">
+    </a>
 
-<img src="../Images/Icon.png" id="icon" width="200">
-  <div id="setting"></div>
+    <a href="../Credits/Creditpage.html">
+      <img src="../Images/Credits.png" id="credits" alt="Credits">
+    </a>
+  </div>
+
+  
   <script>
-  window.addEventListener('load', () => {
-    document.body.classList.add('fade-in');
-  });
-</script>
-    </body>
+    window.addEventListener('load', () => {
+      document.body.classList.add('fade-in');
+    });
+  </script>
+</body>
 </html>
