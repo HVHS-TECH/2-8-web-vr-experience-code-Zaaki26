@@ -6,6 +6,12 @@ body {
   background-attachment: fixed;
   min-height: 100vh;              
   margin: 0;                
+ opacity: 0; /* for fade-in */
+  transition: opacity 0.8s ease;
+}
+
+body.fade-in {
+  opacity: 1; /* Fade in on load */
 }
 
 #arrow {
