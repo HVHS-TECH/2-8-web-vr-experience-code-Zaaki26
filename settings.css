@@ -1,19 +1,19 @@
 body {
   background-image: url("/Images/BG.png");
   background-repeat: no-repeat;
-  background-size: cover; /* This will make it fill the screen */
+  background-size: cover; 
   background-position: center;
   background-attachment: fixed;
   margin: 0;
   min-height: 100vh;
   min-width: 100vw;
   box-sizing: border-box;
-  opacity: 0; /* for fade-in */
+  opacity: 0; 
   transition: opacity 0.8s ease;
 }
 
 body.fade-in {
-  opacity: 1; /* Fade in on load */
+  opacity: 1; 
 }
 
 #arrow {
@@ -36,7 +36,7 @@ body.fade-in {
   z-index: 10;
 }
 
-/* Container for centered buttons */
+
 #menu {
   position: absolute;
   top: 50%;
@@ -49,7 +49,7 @@ body.fade-in {
   z-index: 5;
 }
 
-/* Button styles */
+
 #set,
 #credits {
   width: 600px;
@@ -63,7 +63,7 @@ body.fade-in {
   transform: scale(1.1);
 }
 
-/* Optional: for smaller screens */
+
 @media (max-width: 768px) {
   #set,
   #credits {

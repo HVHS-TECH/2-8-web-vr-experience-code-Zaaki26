@@ -31,6 +31,18 @@ body {
   right: 75px;
   z-index: 10;
 }
+#menu {
+  position: absolute;
+  top: 10%;
+  left: 88%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  z-index: 5;
+}
+
 
 #control {
   position: fixed;
