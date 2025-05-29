@@ -18,8 +18,10 @@
     </a-scene>
     <div id="pauseModal" class="modal" style="display:none;">
   <div class="modal-content">
-  <img src="../Images/Resume.png" id="resumeBtn" width="100" style="cursor: pointer: none;">
-   <img src="../Images/SET.png" id="setBtn" width="100" style="cursor: pointer: none;">
+  <img src="../Images/Resume.png" id="resumeBtn" width="150" style="cursor: pointer: none;">
+    <a href="../index.html">
+        <img src="../Images/SET.png" id="menuBtn" width="150" style="cursor: pointer: none;">
+  </a>
   </div>
 </div>
 <script>
@@ -29,9 +31,9 @@ function showPauseModal() {
 document.getElementById('resumeBtn').onclick = function() {
   document.getElementById('pauseModal').style.display = 'none';
 };
-document.getElementById('settingsBtn').onclick = function() {
+document.getElementById('menuBtn').onclick = function() {
 
-  alert('Settings clicked! (Add your settings logic here)');
+  alert('(Are you sure you want to go back to main menu?)');
 };
 </script>
   </body>
