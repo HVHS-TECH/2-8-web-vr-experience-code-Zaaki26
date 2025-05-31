@@ -1,40 +1,149 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width"/>
-   <link href="../Experience.css" rel="stylesheet">
-    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
- 
-    </head>
- 
-  <body>
-<img src="../Images/Cogwheel.png" id="cogwheel" width="100" style="cursor:pointer;" onclick="showPauseModal()">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width"/>
+  <link href="../Experience.css" rel="stylesheet" />
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+</head>
+<body>
 
-    <a-scene>
-<a-sky color="black"></a-sky>
- <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#0e1410"></a-plane>
-    </a-scene>
-    <div id="pauseModal" class="modal" style="display:none;">
-  <div class="modal-content">
-  <img src="../Images/Resume.png" id="resumeBtn" width="150" style="cursor: pointer: none;">
-    <a href="../index.html">
-        <img src="../Images/SET.png" id="menuBtn" width="150" style="cursor: pointer: none;">
-  </a>
+  <img src="../Images/Cogwheel.png" id="cogwheel" width="100" style="cursor:pointer;" onclick="showPauseModal()" />
+
+  <a-scene>
+    <!-- Environment -->
+    <a-sky color="black"></a-sky>
+    <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#0e1410"></a-plane>
+
+
+    <a-entity class="interactable" flashlight-hover position="0 0.1 -3">
+      <a-gltf-model
+        src="../Models/Flashhh.glb"
+        scale="0.1 0.1 0.1"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear"
+        animation__float="property: position; dir: alternate; dur: 2000; easing: easeInOutSine; loop: true; from: 0 0.1 0; to: 0 0.2 0">
+      </a-gltf-model>
+
+      <a-text 
+        id="pickupText"
+        value="Press F to pick up"
+        position="0 0.6 0"
+        align="center"
+        color="white"
+        visible="false"
+        face-camera>
+      </a-text>
+    </a-entity>
+
+    <!-- Camera and cursor -->
+    <a-camera id="camera" position="0 1.6 0">
+     
+      
+      <a-entity id="hand" position="0.3 -0.3 -0.5">
+       
+       
+        <a-gltf-model
+          id="flashlight"
+          src="../Models/Flashhh.glb"
+          scale="0.1 0.1 0.1"
+          visible="false"
+          rotation="0 180 0" 
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-cursor color="red" fuse="true" fuse-timeout="1500" geometry="primitive: circle; radius: 0.01" material="color: red; shader: flat"></a-cursor>
+    </a-camera>
+  </a-scene>
+
+  <!-- Pause Modal -->
+  <div id="pauseModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <img src="../Images/Resume.png" id="resumeBtn" width="150" />
+      <a href="../index.html"><img src="../Images/SET.png" id="menuBtn" width="150" /></a>
+    </div>
   </div>
-</div>
-<script>
-function showPauseModal() {
-  document.getElementById('pauseModal').style.display = 'flex';
-}
-document.getElementById('resumeBtn').onclick = function() {
-  document.getElementById('pauseModal').style.display = 'none';
-};
-document.getElementById('menuBtn').onclick = function() {
 
-  alert('(Are you sure you want to go back to main menu?)');
-};
-</script>
-  </body>
-  </html>
+  <!-- Scripts -->
+  <script>
+   
+    AFRAME.registerComponent('face-camera', {
+      tick: function () {
+        const cam = document.querySelector('[camera]');
+        if (cam) {
+          this.el.object3D.lookAt(cam.object3D.position);
+        }
+      }
+    });
+
+    
+    AFRAME.registerComponent('flashlight-hover', {
+      init: function () {
+        const el = this.el;
+        const textEl = el.querySelector('#pickupText');
+        const cameraEl = document.getElementById('camera');
+        const maxDistance = 2.0;
+        let equipped = false;
+
+        function showTextIfClose() {
+          const modelPos = new THREE.Vector3();
+          el.object3D.getWorldPosition(modelPos);
+          const camPos = new THREE.Vector3();
+          cameraEl.object3D.getWorldPosition(camPos);
+          const distance = modelPos.distanceTo(camPos);
+          if (distance <= maxDistance && !equipped) {
+            textEl.setAttribute('visible', 'true');
+          } else {
+            textEl.setAttribute('visible', 'false');
+          }
+        }
+
+        
+        el.addEventListener('mouseenter', () => {
+          showTextIfClose();
+        });
+
+       
+        el.addEventListener('mouseleave', () => {
+          textEl.setAttribute('visible', 'false');
+        });
+
+        
+        window.addEventListener('keydown', (event) => {
+          if (event.key.toLowerCase() === 'f') {
+            const modelPos = new THREE.Vector3();
+            el.object3D.getWorldPosition(modelPos);
+            const camPos = new THREE.Vector3();
+            cameraEl.object3D.getWorldPosition(camPos);
+            const distance = modelPos.distanceTo(camPos);
+            if (distance <= maxDistance && !equipped) {
+              equipped = true;
+              textEl.setAttribute('visible', 'false');
+             
+         
+              el.setAttribute('visible', 'false');
+             
+          
+              const flashlightInHand = document.getElementById('flashlight');
+              flashlightInHand.setAttribute('visible', 'true');
+            }
+          }
+        });
+      }
+    });
+
+  
+    function showPauseModal() {
+      document.getElementById('pauseModal').style.display = 'flex';
+    }
+    document.getElementById('resumeBtn').onclick = function () {
+      document.getElementById('pauseModal').style.display = 'none';
+    };
+    document.getElementById('menuBtn').onclick = function () {
+      
+    };
+  </script>
+
+</body>
+</html>
